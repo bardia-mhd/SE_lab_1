@@ -2,7 +2,6 @@ from task import Task
 import json
 import os
 
-
 class TaskManager:
     def __init__(self, db_path="./db/tasks.json"):
         self.db_path = db_path
@@ -47,3 +46,6 @@ class TaskManager:
     def clear(self):
         self.tasks = []
         self.save_to_db()
+
+    def __str__(self):
+        return "1"

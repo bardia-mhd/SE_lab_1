@@ -26,7 +26,9 @@ class TaskManager:
             self.save_to_db()
 
     def mark_done(self, index):
-        pass
+        if index < len(self.tasks):
+            self.tasks[index].mark_done()
+            self.save_to_db()
 
     def list_tasks(self):
         for index, task in enumerate(self.tasks):

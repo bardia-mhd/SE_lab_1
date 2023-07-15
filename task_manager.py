@@ -16,7 +16,9 @@ class TaskManager:
             json.dump([task.to_dict() for task in self.tasks], f)
     
     def add(self, title):
-        pass
+        task = Task(title)
+        self.tasks.append(task)
+        self.save_to_db()
 
     def delete(self, index):
         pass

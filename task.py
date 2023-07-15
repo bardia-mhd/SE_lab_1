@@ -8,3 +8,6 @@ class Task:
 
     def __str__(self):
         return f"{self.title} - {'Done' if self.done else 'Not done'}"
+
+    def to_dict(self):
+        return {"title": self.title, "done": self.done}

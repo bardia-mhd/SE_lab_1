@@ -10,6 +10,10 @@ class TaskManager:
             with open(db_path, 'w') as f:
                 json.dump([], f)
             self.tasks = []
+
+    def save_to_db(self):
+        with open(self.db_path, 'w') as f:
+            json.dump([task.to_dict() for task in self.tasks], f)
     
     def add(self, title):
         pass
@@ -25,4 +29,3 @@ class TaskManager:
 
     def clear(self):
         pass
-    

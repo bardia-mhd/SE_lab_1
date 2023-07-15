@@ -29,7 +29,8 @@ class TaskManager:
         pass
 
     def list_tasks(self):
-        pass
+        for index, task in enumerate(self.tasks):
+            print(f"{index}: {task}")
 
     def clear(self):
         self.tasks = []

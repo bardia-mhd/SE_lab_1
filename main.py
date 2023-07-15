@@ -1,26 +1,26 @@
+from task_manager import TaskManager
+
 def main():
-    todo_list = load_todo_list()
 
-    print("To-Do List Manager!")
+    task_manager = TaskManager()
 
-    display_todo_list(todo_list)
-    
     while True:
-        user_input = input("Enter a command: ")
+        print("Commands: add <task>, done <task index>, delete <task index>, list, clear, quit")
+        command = input("> ").split()
+        operation = command[0]
 
-        if user_input == "add":
-            add_task(todo_list)
-        elif user_input == "delete":
-            delete_task(todo_list)
-        elif user_input == "complete":
-            complete_task(todo_list)
-        elif user_input == "display":
-            display_todo_list(todo_list)
-        elif user_input == "save":
-            save_todo_list(todo_list)
-        elif user_input == "quit":
+        if operation == "add":
+            task_manager.add(' '.join(command[1:]))
+        elif operation == "delete":
+            task_manager.delete(int(command[1]))
+        elif operation == "done":
+            task_manager.mark_done(int(command[1]))
+        elif operation == "list":
+            task_manager.list_tasks()
+        elif operation == "clear":
+            task_manager.clear()
+        elif operation == "quit":
             break
-        else:
-            print("Invalid command. Please try again.")
 
-    print("Exit!")
+if __name__ == "__main__":
+    main()

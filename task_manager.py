@@ -1,5 +1,6 @@
-import os
+from task import Task
 import json
+import os
 
 class TaskManager:
     def __init__(self, db_path="./db/tasks.json"):

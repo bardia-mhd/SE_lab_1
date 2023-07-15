@@ -1,3 +1,6 @@
+import os
+import json
+
 class TaskManager:
     def __init__(self, db_path="./db/tasks.json"):
         self.db_path = db_path

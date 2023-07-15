@@ -21,7 +21,9 @@ class TaskManager:
         self.save_to_db()
 
     def delete(self, index):
-        pass
+        if index < len(self.tasks):
+            del self.tasks[index]
+            self.save_to_db()
 
     def mark_done(self, index):
         pass
@@ -30,4 +32,5 @@ class TaskManager:
         pass
 
     def clear(self):
-        pass
+        self.tasks = []
+        self.save_to_db()

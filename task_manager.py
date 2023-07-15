@@ -37,3 +37,6 @@ class TaskManager:
     def clear(self):
         self.tasks = []
         self.save_to_db()
+
+    def __str__(self):
+        return 'salam'
